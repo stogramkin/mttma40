@@ -97,7 +97,10 @@ class App(tk.Frame):
                 self.y = 0
                 self.DrawArea.delete("all")
                 self.update()
-            
+            if self.mesnum > self.num1 -50:
+                self.mesnum = 0
+                self.messages = np.zeros((self.num1, 3), dtype='object')
+                
             line = self.ser.readline()
             print (line)
             line_code = str(line)
