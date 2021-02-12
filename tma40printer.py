@@ -92,7 +92,7 @@ class App(tk.Frame):
     def start_exp(self):
         self.null_data(self.serial_number)
         while True:
-            
+# сбрасываем в ноль счетчик строк при достиении значения 10000-50        
             if self.y > self.num1 - 50:
                 self.y = 0
                 self.DrawArea.delete("all")
