@@ -9,7 +9,7 @@ import serial
 cmap = plt.get_cmap('Greys')
 
 
-
+# Словарь всех hex символов группами по три
 HexDec = dict()
 for i in range(800):
     digit = hex(i)[2:].upper()
@@ -40,6 +40,7 @@ class App(tk.Frame):
         self.grid_columnconfigure(0, weight=1)
         
         self.master.title('TMA 40 printer emulator')
+# задаем размеры окна и максимум по вертикали и прикрепляем его к правой стороне
         window_params = '700x'+str(int(window.winfo_screenheight())-100)+'+' + str(int((window.winfo_screenwidth())-700)) + '+0'
         print(window.winfo_screenwidth())
         
@@ -47,7 +48,7 @@ class App(tk.Frame):
         menubar = tk.Menu(self.master)
         self.master.config(menu=menubar)
         
-        file_items = tk.Menu(menubar)
+        file_items = tk.Menu(menubar)OD
         file_items.add_command(label='Сохранить', command=self.save_data)
         file_items.add_command(label='Выход', command=self.quit) #sys.exit)
         
@@ -71,7 +72,7 @@ class App(tk.Frame):
                 self.thanks = False
         
         
-    def quit(self):
+    def quit(self): # Меню выхода из программы
         self.destroy()
         exit()
 #    def closeapp(self):
